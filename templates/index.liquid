@@ -7,7 +7,63 @@
     - http://docs.shopify.com/themes/liquid-variables/global
 {% endcomment %}
 
-<h2>{{ 'homepage.sections.frontpage_title' | t }}</h2>
+{% comment %}
+
+  BEGIN MAIN SPLASH IMAGE
+  Display the main splash image with it's corresponding text and button
+
+{% endcomment %}
+
+<div class="fullScreen homeSplash">
+  <figure>
+    <img src="{{ 'homeSplash.png' | asset_url }}">
+    <figcaption class="text-center large--one-fourth grid--full">
+      <div class="three-fourths">
+        <h1 class="text-right">{{ settings.splash_header }}</h1>
+        <p class="text-right">{{ settings.splash_text }}</p>
+        <a href="/#cabins" class="text-center two-thirds right btn">{{ settings.splash_button_label }}</a>
+      </div>
+    </figcaption>
+  </figure>
+</div>
+
+{% comment %}
+
+  END MAIN SPLASH IMAGE
+
+{% endcomment %}
+
+<!-- WALLAROO MEDIA - 03/09/16 <h2>{{ 'homepage.sections.frontpage_title' | t }}</h2> -->
+
+{% comment %}
+
+  BEGIN FIRST TEXT BLOCK
+
+{% endcomment %}
+
+<div class="text-center wrapper">
+  <h2>{{ settings.first_text_header }}</h2>
+  <hr class="one-sixth text-center">
+  <h3>{{ settings.first_text_subheader }}</h3>
+  <p>{{ settings.first_text_text }}</p>
+  <hr class="one-sixth text-center">
+  <h4>{{ settings.first_phone_header }}</h4>
+  <span>{{ settings.first_phone_number }}</span>
+  <span class="subText grid__item text-center no-padding"><a href="/#cabins">SCROLL TO VIEW CABINS</a></span>
+</div>
+
+{% comment %}
+
+  END FIRST TEXT BLOCK
+
+{% endcomment %}
+
+
+{% comment %}
+
+  BEGIN CABINS
+
+{% endcomment %}
 
 {% comment %}
   Use class grid-uniform to have evenly sized columns clear
@@ -28,7 +84,7 @@
       Example:
         - {% assign grid_item_width = 'large--one-third medium--one-half' %}
     {% endcomment %}
-    {% assign grid_item_width = 'large--one-quarter medium--one-half' %}
+    {% assign grid_item_width = '' %}
     {% include 'product-grid-item' %}
 
   {% else %}
@@ -46,8 +102,46 @@
 
 </div>
 
-<hr>
+{% comment %}
 
+  END CABINS
+
+{% endcomment %}
+
+{% comment %}
+
+  BEGIN SECOND TEXT BLOCK
+
+{% endcomment %}
+
+<div class="text-center wrapper">
+  <hr class="one-sixth text-center">
+  <h3>{{ settings.second_text_subheader }}</h3>
+  <p>{{ settings.second_text_text }}</p>
+  <h4>{{ settings.second_phone_header }}</h4>
+  <span>{{ settings.second_phone_number }}</span>
+  <a href="/concierge" class="btn">{{ settings.splash_button_label }}</a>
+
+</div>
+
+{% comment %}
+
+  END SECOND TEXT BLOCK
+
+{% endcomment %}
+
+
+
+
+
+
+
+{% comment %}
+-----------------------------------------------------------
+THIS IS ALL COMMENTED out
+-----------------------------------------------------------
+{% endcomment %}
+{% comment %}
 <h2>{{ 'homepage.sections.featured_title' | t }}</h2>
 
 <div class="grid-uniform">
@@ -70,22 +164,23 @@
       {% unless collection.handle == 'frontpage' %}
         {% assign isEmpty = false %}
         {% assign collection_item_width = 'large--one-fifth medium--one-third' %}
-        <div class="grid__item {{ collection_item_width }} text-center">
+        <div class="grid__item text-center" id="cabins">
           {% comment %}
             Use capture to put the collection title in a variable that is used in liquid filters
           {% endcomment %}
           {% capture collection_title %}{{ collection.title | escape }}{% endcapture %}
 
-          <a href="{{ collection.url }}" title="{{ 'collections.general.link_title' | t: title: collection_title }}" class="grid__image">
+          <a href="{{ collection.url }}" title="{{ 'collections.general.link_title' | t: title: collection_title }}" class="grid__image one-half">
             {% if collection.image %}
-              {{ collection.image.src | img_url: 'large' | img_tag: collection_title }}
+              {{ collection.image.src | img_url: 'master' | img_tag: collection_title }}
             {% else %}
-              {{ collection.products.first.featured_image | img_url: 'large' | img_tag: collection_title }}
+              {{ collection.products.first.featured_image | img_url: 'master' | img_tag: collection_title }}
             {% endif %}
           </a>
 
-          <p>
+          <p class="grid__image one-half">
             <a href="{{ collection.url }}" title="{{ 'collections.general.link_title' | t: title: collection_title }}">{{ collection.title }}</a><br>
+            <p>{{ collection.description }}</p>p>
             {{ 'collections.general.items_with_count' | t: count: collection.all_products_count }}
           </p>
         </div>
@@ -110,9 +205,18 @@
 
 </div>
 
-<hr>
+{% comment %}
+
+  END CABINS
+
+{% endcomment %}
 
 {% comment %}
+
+THIS ALL CAME STANDARD WITH THE THEME, WE DO NOT WANT IT BUT HAVE KEPT IT HERE FOR REFERENCE PURPOSES
+
+<hr>
+
   Loop through three recent blog articles with the following code.
 
   Since we're not on the blog template, we need to define the blog
@@ -161,3 +265,5 @@
 
   {% endfor %}
 </div>
+
+{% endcomment %}

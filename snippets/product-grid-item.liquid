@@ -18,7 +18,7 @@
   Set the default grid_item_width if no variable is set
 {% endcomment %}
 {% unless grid_item_width %}
-  {% assign grid_item_width = 'large--one-third medium--one-half' %}
+  {% assign grid_item_width = 'large--one-half' %}
 {% endunless %}
 
 {% comment %}
@@ -37,6 +37,11 @@
   {% assign sold_out = false %}
 {% endif %}
 
+{% comment %}
+  Make a variable called count to track if we are on even or odd product entry.
+{% endcomment %}
+{% increment count %}
+
 <div class="grid__item {{ grid_item_width }}">
 
   {% comment %}
@@ -51,13 +56,38 @@
       - http://docs.shopify.com/support/your-store/collections/how-to-navigate-within-a-collection
 
   {% endcomment %}
-  <a href="{{ product.url | within: collection }}" class="grid__image">
-    <img src="{{ product.featured_image.src | img_url: 'large' }}" alt="{{ product.featured_image.alt | escape }}">
-  </a>
+  {% assign isEven = count | modulo:2 %}
+  {% if isEven == 1 %}
+    <a href="{{ product.url | within: collection }}" class="grid__item seven-twelfths no-padding">
+      <img src="{{ product.featured_image.src | img_url: 'master' }}" alt="{{ product.featured_image.alt | escape }}">
+    </a>
+    <div class="grid__item five-twelfths no-padding text-center">
+      <p class="cabin-title">
+        <a href="{{ product.url | within: collection }}">{{ product.title }}</a>
+      </p>
+      <p>{{ product.description }}</p>
+      <a href="{{ product.url | within: collection }}" class="btn">EXPLORE</a>
+      <a href="{{ product.url | within: collection }}/#reservation" class="italic">CHECK AVAILABILITY</a>
+    </div>
 
-  <p class="h6">
-    <a href="{{ product.url | within: collection }}">{{ product.title }}</a>
-  </p>
+  {% else %}
+    <div class="grid__item five-twelfths no-padding text-center">
+      <p class="cabin-title">
+        <a href="{{ product.url | within: collection }}">{{ product.title }}</a>
+      </p>
+      <p>{{ product.description }}</p>
+      <a href="{{ product.url | within: collection }}" class="btn">EXPLORE</a>
+      <a href="{{ product.url | within: collection }}/#reservation" class="italic">CHECK AVAILABILITY</a>
+    </div>
+
+    <a href="{{ product.url | within: collection }}" class="grid__item seven-twelfths no-padding">
+      <img src="{{ product.featured_image.src | img_url: 'master' }}" alt="{{ product.featured_image.alt | escape }}">
+    </a>
+
+  {% endif %}
+
+  {% comment  %}
+  The below is all for pricing. We don't want to show the prices here, so we will comment this out.
   <p>
     {% comment %}
       You can show a leading 'from' or 'up to' by checking 'product.price_varies'
@@ -87,5 +117,5 @@
       <br><s>{{ product.compare_at_price | money }}</s>
     {% endif %}
   </p>
-
+{% endcomment %}
 </div>

@@ -43,6 +43,7 @@
   #Product and Collection Grids
   #Collection Filters
   #Breadcrumbs
+  #Home Page
   #Product Page
   #Notes and Form Feedback
   #Cart Page
@@ -106,8 +107,8 @@ $colorBody: {{ settings.color_body_bg }};
 $colorBorder: {{ settings.color_borders }};
 
 // Nav and dropdown link background
-$colorNav: #f2f2f2;
-$colorNavText: #333;
+$colorNav: #FFFFFF;
+$colorNavText: #FFFFFF;
 
 // Site Footer
 $colorFooterBg: {{ settings.color_footer_bg }};
@@ -713,6 +714,15 @@ body {
   background-color: $colorBody;
 }
 
+figure {
+  margin: 0;
+}
+
+.template-index main {
+  margin: 0 auto;
+  padding: 0;
+}
+
 [tabindex='-1']:focus {
   outline: none;
 }
@@ -752,6 +762,32 @@ body {
   display: table-cell;
   vertical-align: middle;
   float: none;
+}
+
+.display-inline-block {
+  display: inline-block;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.fullScreen {
+  display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;    /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;  /* TWEENER - IE 10 */
+  display: -webkit-flex; /* NEW - Chrome - Safari 8 */
+  display: flex;
+  -webkit-justify-content: center; /* Safari 8 */
+  justify-content: center;
+}
+
+.subText.grid__item {
+  padding: 0;
+}
+
+.no-padding {
+  padding: 0;
 }
 
 @include at-query ($min, $large) {
@@ -920,7 +956,7 @@ hr {
   clear: both;
   border-top: solid $colorBorder;
   border-width: 1px 0 0;
-  margin: $gutter 0;
+  // margin: $gutter 0;
   height: 0;
 
   &.hr--small {
@@ -1764,6 +1800,9 @@ label.error {
 ==============================================================================*/
 .site-header {
   padding: ($gutter / 2) 0;
+  background-color: rgba(0,0,0,.5);
+  color: white;
+  position: absolute;
 
   .grid--table {
     display: table;
@@ -1772,7 +1811,8 @@ label.error {
 
     > .grid__item {
       float: none;
-      display: table-cell;
+      display: inline-block;
+      width: auto;
       vertical-align: middle;
     }
   }
@@ -1785,6 +1825,7 @@ label.error {
 
   @include at-query ($min, $large) {
     text-align: left;
+    padding: 0 2em;
   }
 
   a,
@@ -1831,7 +1872,7 @@ label.error {
   #Site Nav and Dropdowns
 ==============================================================================*/
 .nav-bar {
-  background-color: $colorNav;
+  float: right;
 }
 
 .site-nav {
@@ -1862,7 +1903,7 @@ label.error {
 .site-nav__link {
   display: block;
   text-decoration: none;
-  padding: $gutter / 2;
+  padding: $gutter;
   white-space: nowrap;
   color: $colorNavText;
 
@@ -2225,6 +2266,29 @@ label.error {
       padding-left: 0;
     }
   }
+}
+
+/*============================================================================
+  #Home Page
+==============================================================================*/
+/* Position the figcaption on top of the figure */
+.homeSplash figure {
+  position: relative;
+  z-index: -1;
+}
+.homeSplash figcaption {
+    position: absolute;
+    bottom: 5em;
+    right: .5em;
+    padding: 2em 10em;
+    background-color: rgba(0,0,0,.5);
+    color: white;
+}
+.homeSplash figcaption a {
+  display: block;
+  border: 1px solid gold;
+  color: gold;
+  padding: 1em;
 }
 
 
