@@ -108,7 +108,7 @@ $colorBorder: {{ settings.color_borders }};
 
 // Nav and dropdown link background
 $colorNav: #FFFFFF;
-$colorNavText: #FFFFFF;
+$colorNavText: #FFD700;
 
 // Site Footer
 $colorFooterBg: {{ settings.color_footer_bg }};
@@ -145,11 +145,12 @@ $zindexDrawer: 10;
 
 /*================ Typography ================*/
 
-$headerFontStack: 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$headerFontWeight: 700;
+$headerFontStack: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+$headerFontWeight: lighter;
 
-$bodyFontStack: 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$bodyFontStack: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 $baseFontSize: 14px; // Henseforth known as 1em
+
 
 @font-face {
   font-family: 'icons';
@@ -1135,7 +1136,7 @@ html input[disabled] {
   border-radius: $radius;
 
   /*================ Set primary button colors - can override later ================*/
-  background-color: $colorBtnPrimary;
+
   color: $colorBtnPrimaryText;
 
   &:hover {
@@ -2289,6 +2290,7 @@ label.error {
   border: 1px solid gold;
   color: gold;
   padding: 1em;
+
 }
 
 
