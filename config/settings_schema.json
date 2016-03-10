@@ -138,6 +138,116 @@
     ]
   },
   {
+    "name": "Home Page",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Splash Image"
+      },
+      {
+        "type": "image",
+        "id": "homeSplash.png",
+        "label": "Home Splash Image",
+        "max-width": 1920,
+        "info": "Maximum width is 1920px. The uploaded file will be resized to fit within those constraints."
+      },
+      {
+        "type": "text",
+        "id": "splash_header",
+        "label": "Splash Image Header Text",
+        "default": "One Mountain"
+      },
+      {
+        "type": "text",
+        "id": "splash_text",
+        "label": "Splash Image Text",
+        "default": "ENDLESS POSSIBILITIES"
+      },
+      {
+        "type": "text",
+        "id": "splash_button_label",
+        "label": "Splash Image Button Label",
+        "default": "EXPLORE OUR CABINS"
+      },
+      {
+        "type": "text",
+        "id": "splash_button_link",
+        "label": "Splash Image Button Link",
+        "default": "/#cabins"
+      },
+      {
+        "type": "header",
+        "content": "First Text Section"
+      },
+      {
+        "type": "text",
+        "id": "first_text_subheader",
+        "label": "Subheader",
+        "default": "MOST EXCLUSIVE DESTINATION AT SUNDANCE"
+      },
+      {
+        "type": "text",
+        "id": "first_text_header",
+        "label": "Header",
+        "default": "LUXURY ELEVATED"
+      },
+      {
+        "type": "textarea",
+        "id": "first_text_text",
+        "label": "Text",
+        "default": "Time on the mountain is precious. At Blue Light Resort we don't just offer the best mountain experience, we offer more of it. Your concierge will save you time and worry by attending to everything from airport rides to daily errands. With the finest amenities and service, you will experience the mountains like never before."
+      },
+      {
+        "type": "header",
+        "content": "First Phone Number"
+      },
+      {
+        "type": "text",
+        "id": "first_phone_header",
+        "label": "Header",
+        "default": "CALL US TO RESERVE TODAY"
+      },
+      {
+        "type": "text",
+        "id": "first_phone_number",
+        "label": "Number",
+        "default": "801-334-2003"
+      },
+      {
+        "type": "header",
+        "content": "Second Text Section"
+      },
+      {
+        "type": "text",
+        "id": "second_text_header",
+        "label": "Header",
+        "default": "FREEDOM FOUND"
+      },
+      {
+        "type": "textarea",
+        "id": "second_text_text",
+        "label": "Text",
+        "default": "There is so much to do, and thanks to our concierge there is so much time. For more information about our offerings or the area give us a call."
+      },
+      {
+        "type": "header",
+        "content": "Second Phone Number"
+      },
+      {
+        "type": "text",
+        "id": "second_phone_header",
+        "label": "Header",
+        "default": "TALK TO OUR CONCIERGE TODAY"
+      },
+      {
+        "type": "text",
+        "id": "second_phone_number",
+        "label": "Number",
+        "default": "801-334-2003"
+      }
+    ]
+  },
+  {
     "name": "Footer",
     "settings": [
       {
@@ -149,13 +259,13 @@
         "type": "text",
         "id": "social_twitter_link",
         "label": "Twitter URL",
-        "info": "Example: https://twitter.com/shopify"
+        "info": "Example: https:\/\/twitter.com\/shopify"
       },
       {
         "type": "text",
         "id": "social_facebook_link",
         "label": "Facebook URL",
-        "info": "Example: https://www.facebook.com/shopify"
+        "info": "Example: https:\/\/www.facebook.com\/shopify"
       },
       {
         "type": "checkbox",

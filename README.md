@@ -95,7 +95,7 @@ Timber is released under the [MIT License](LICENSE).
 
 Installation
 ---------------------
-Clone repository from https://github.com/josephnewell90/drThornleysHayBalancer
+Clone repository from https://github.com/josephnewell90/ModifiedTimber
 Install Ruby (http://rubyinstaller.org/)
 Navigate to file directory
 Run gem install shopify_theme
