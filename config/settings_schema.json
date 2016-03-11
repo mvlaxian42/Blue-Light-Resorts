@@ -257,15 +257,27 @@
       },
       {
         "type": "text",
-        "id": "social_twitter_link",
-        "label": "Twitter URL",
-        "info": "Example: https:\/\/twitter.com\/shopify"
+        "id": "social_facebook_link",
+        "label": "Facebook URL",
+        "info": "Example: https:\/\/www.facebook.com\/shopify",
+        "default": "https:\/\/www.facebook.com\/bluelightresort"
       },
       {
         "type": "text",
-        "id": "social_facebook_link",
-        "label": "Facebook URL",
-        "info": "Example: https:\/\/www.facebook.com\/shopify"
+        "id": "social_trip_advisor_link",
+        "label": "Trip Advisor URL"
+      },
+      {
+        "type": "text",
+        "id": "social_instagram_link",
+        "label": "Instagram URL",
+        "info": "Example: https:\/\/www.instagram.com\/shopify"
+      },
+      {
+        "type": "text",
+        "id": "social_google_link",
+        "label": "Google + URL",
+        "info": "Example: https:\/\/www.plus.google.com\/+shopify"
       },
       {
         "type": "checkbox",
@@ -277,6 +289,24 @@
         "id": "newsletter_form_action",
         "label": "MailChimp form action URL",
         "info": "[Where do I find my MailChimp form action URL?](http:\/\/docs.shopify.com\/support\/configuration\/store-customization\/where-do-i-get-my-mailchimp-form-action)"
+      },
+      {
+        "type": "text",
+        "id": "contact_name",
+        "label": "Contact Name",
+        "default": "JEANNE WORKMAN"
+      },
+      {
+        "type": "text",
+        "id": "contact_number",
+        "label": "Phone Number",
+        "default": "801-334-2003"
+      },
+      {
+        "type": "text",
+        "id": "contact_email",
+        "label": "Email",
+        "default": "support@bluelightresort.com"
       }
     ]
   },

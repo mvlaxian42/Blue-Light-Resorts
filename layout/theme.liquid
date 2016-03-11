@@ -297,9 +297,15 @@
     <footer class="site-footer small--text-center" role="contentinfo">
       <div class="wrapper">
         <div class="grid">
+          <div class="grid__item large--one-third medium--one-half">
+            <ul>
+              {% for link in linklists.main-menu.links %}
+                    <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+              {% endfor %}
+            </ul>
+          </div>
           {% if settings.footer_social_enable %}
             <div class="grid__item large--one-third medium--one-half">
-              <h3>{{ 'layout.footer.social_title' | t }}</h3>
                 <ul class="inline-list social-icons">
                 {% if settings.social_facebook_link != blank %}
                   <li>
@@ -336,6 +342,20 @@
                 </ul>
             </div>
           {% endif %}
+          {% comment %}
+            BEGIN CONTACT INFO
+          {% endcomment %}
+          <div class="grid__item large--one-third push--large--one-third medium--one-half">
+
+            <ul>
+              <li>CONTACT:</li>
+              <li>{{ settings.contact_name }}</li>
+              <li>{{ settings.contact_number }}</li>
+              <li>{{ settings.contact_email }}</li>
+            </ul>
+
+          </div>
+
           {% if settings.footer_newsletter_enable %}
             <div class="grid__item large--one-third push--large--one-third medium--one-half">
               {% comment %}
@@ -360,6 +380,7 @@
               </form>
             </div>
           {% endif %}
+
           <div class="grid__item text-center">
             <hr>
             {% comment %}
@@ -378,9 +399,9 @@
                 {% endfor %}
               </ul>
             {% endunless %}
-            <a href="http://shopify.com/timber">Timber Theme Framework</a> by <a href="http://www.shopify.com?ref=Timber" title="Shopify.com">Shopify</a><br>
-            <small>{{ powered_by_link }}</small>
+            <p>&copy; COPYRIGHT 2015 BLUE LIGHT RESORT</p>
           </div>
+
         </div>
       </div>
     </footer>
