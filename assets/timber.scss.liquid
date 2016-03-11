@@ -86,7 +86,7 @@ $colorSecondary: {{ settings.color_secondary }};
 $colorBtnPrimary: $colorPrimary;
 $colorBtnPrimaryHover: darken($colorBtnPrimary, 10%);
 $colorBtnPrimaryActive: darken($colorBtnPrimaryHover, 10%);
-$colorBtnPrimaryText: #fff;
+$colorBtnPrimaryText: #C39A1E;
 
 $colorBtnSecondary: $colorSecondary;
 $colorBtnSecondaryHover: darken($colorBtnSecondary, 10%);
@@ -108,7 +108,7 @@ $colorBorder: {{ settings.color_borders }};
 
 // Nav and dropdown link background
 $colorNav: #FFFFFF;
-$colorNavText: #FFD700;
+$colorNavText: #FFFFFF;
 
 // Site Footer
 $colorFooterBg: {{ settings.color_footer_bg }};
@@ -137,18 +137,19 @@ $drawerTransition: all 0.4s cubic-bezier(0.46, 0.01, 0.32, 1);
 $siteWidth: 1180px;
 $gutter: 30px;
 $gridGutter: 30px; // can be a %, but nested grids will have smaller margins because of it
-$radius: 3px;
+$radius: 0px;
 
 // Z-index
 $zindexNavDropdowns: 5;
 $zindexDrawer: 10;
 
 /*================ Typography ================*/
-
-$headerFontStack: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+@import url(https://fonts.googleapis.com/css?family=Quattrocento:700,400);
+@import url(https://fonts.googleapis.com/css?family=Quattrocento+Sans:400,400italic,700,700italic);
+$headerFontStack: 'Quattrocentro', serif;
 $headerFontWeight: lighter;
 
-$bodyFontStack: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+$bodyFontStack: 'Quattrocento Sans', sans-serif;
 $baseFontSize: 14px; // Henseforth known as 1em
 
 
@@ -836,6 +837,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: $headerFontWeight;
   margin: 0 0 0.5em;
   line-height: 1.4;
+  letter-spacing: .21em;
 
   a {
     text-decoration: none;
@@ -955,7 +957,7 @@ pre {
 /*================ Horizontal Rules ================*/
 hr {
   clear: both;
-  border-top: solid $colorBorder;
+  border-top: solid #cc9900;
   border-width: 1px 0 0;
   // margin: $gutter 0;
   height: 0;
@@ -1129,7 +1131,7 @@ html input[disabled] {
   vertical-align: middle;
   white-space: nowrap;
   cursor: pointer;
-  border: 1px solid transparent;
+  border: 2px solid #C39A1E;
   @include user-select(none);
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -1140,7 +1142,6 @@ html input[disabled] {
   color: $colorBtnPrimaryText;
 
   &:hover {
-    background-color: $colorBtnPrimaryHover;
     color: $colorBtnPrimaryText;
   }
 
@@ -1909,7 +1910,9 @@ label.error {
   color: $colorNavText;
 
   &:hover,
-  &:active,
+  &:active {
+    color: #C39A1E;
+  }
   &:focus {
     color: darken($colorNavText, 15%);
   }
@@ -2606,3 +2609,9 @@ label.error {
 }
 
 {% endif %} // settings.ajax_cart_method
+
+.cabin-title {
+  font-family: 'Quattrocento';
+  font-size: 18px;
+
+}
