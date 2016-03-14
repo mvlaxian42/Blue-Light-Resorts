@@ -108,10 +108,10 @@
     "form": {
       "name": "Name",
       "email": "Email",
-      "phone": "Phone Number",
-      "message": "Message",
-      "send": "Send",
-      "post_success": "Thanks for contacting us. We'll get back to you as soon as possible."
+      "phone": "Telephone",
+      "message": "Special Requests",
+      "send": "Send Request",
+      "post_success": "Thanks for requesting a reservation with us. We'll get back to you as soon as possible."
     }
   },
   "customer": {

@@ -9,6 +9,105 @@
 
 {% endcomment %}
 
+<script>
+//Initialize the tab content with overview metadata
+$(document).ready(function() {
+  var overviewContent = $("#overviewContent").html().split("\n");
+  var overviewContentHTML = [];
+  for (var i = 0; i < overviewContent.length; i++) {
+    overviewContentHTML[i] = "<li>" + overviewContent[i] + "</li>";
+  }
+
+  return $("#tabContent").html(overviewContentHTML);
+});
+
+//When user clicks on a tab, insert the appropriate metadata into the #tabContent
+$(document).ready(function() {
+  $(".tab").click(function() {
+    //Assign the current tab, unassign any others
+    $(".tab").removeClass("active");
+    $(this).addClass("active");
+    //Get which key of the metadata we are using and assign the hidden content to be the content in the tabContent div
+    if ($(this).hasClass("overview")) {
+      var overviewContent = $("#overviewContent").html().split("\n");
+      var overviewContentHTML = [];
+      for (var i = 0; i < overviewContent.length; i++) {
+        overviewContentHTML[i] = "<li>" + overviewContent[i] + "</li>";
+      }
+
+      return $("#tabContent").html(overviewContentHTML);
+    }
+    else if ($(this).hasClass("suites")) {
+      var suitesContent = $("#suitesContent").html().split("\n");
+      var suitesContentHTML = [];
+      for (var i = 0; i < suitesContent.length; i++) {
+        suitesContentHTML[i] = "<li>" + suitesContent[i] + "</li>";
+      }
+
+      return $("#tabContent").html(suitesContentHTML);
+    }
+    else if ($(this).hasClass("kitchen")) {
+      var kitchenContent = $("#kitchenContent").html().split("\n");
+      var kitchenContentHTML = [];
+      for (var i = 0; i < kitchenContent.length; i++) {
+        kitchenContentHTML[i] = "<li>" + kitchenContent[i] + "</li>";
+      }
+
+      return $("#tabContent").html(kitchenContentHTML);
+    }
+    else if ($(this).hasClass("grounds")) {
+      var groundsContent = $("#groundsContent").html().split("\n");
+      var groundsContentHTML = [];
+      for (var i = 0; i < groundsContent.length; i++) {
+        groundsContentHTML[i] = "<li>" + groundsContent[i] + "</li>";
+      }
+
+      return $("#tabContent").html(groundsContentHTML);
+    }
+    else if ($(this).hasClass("recreation")) {
+      var recreationContent = $("#recreationContent").html().split("\n");
+      var recreationContentHTML = [];
+      for (var i = 0; i < recreationContent.length; i++) {
+        recreationContentHTML[i] = "<li>" + recreationContent[i] + "</li>";
+      }
+
+      return $("#tabContent").html(recreationContentHTML);
+    }
+    //Assign the content in the #tabContent div to currentMetadata
+  });
+});
+</script>
+
+{% if product.metafields.c_f.overview %}
+  <div hidden id="overviewContent">
+      {{ product.metafields.c_f.overview }}
+  </div>
+{% endif %}
+
+{% if product.metafields.c_f.suites %}
+  <div hidden id="suitesContent">
+      {{ product.metafields.c_f.suites }}
+  </div>
+{% endif %}
+
+{% if product.metafields.c_f.kitchen %}
+  <div hidden id="kitchenContent">
+      {{ product.metafields.c_f.kitchen }}
+  </div>
+{% endif %}
+
+{% if product.metafields.c_f.grounds %}
+  <div hidden id="groundsContent">
+      {{ product.metafields.c_f.grounds }}
+  </div>
+{% endif %}
+
+{% if product.metafields.c_f.recreation %}
+  <div hidden id="recreationContent">
+      {{ product.metafields.c_f.recreation }}
+  </div>
+{% endif %}
+
 <div itemscope itemtype="http://schema.org/Product">
 
   <meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
@@ -44,18 +143,69 @@
       {% endif %}
     </div>
 
-    <div class="grid__item large--one-half">
+    <div class="grid__item text-center colorBackground">
 
       <h1 itemprop="name">{{ product.title }}</h1>
 
-      <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-        <meta itemprop="priceCurrency" content="{{ shop.currency }}">
+      <hr class="one-sixth">
 
-        <link itemprop="availability" href="http://schema.org/{% if product.available %}InStock{% else %}OutOfStock{% endif %}">
+
+
+      <div class="product-description rte large--one-half no-float" itemprop="description">
+        {{ product.description }}
+      </div>
+
+      <div class="tabs">
+        <ul>
+          {% if product.metafields.c_f.overview %}
+            <li class="tab overview active">
+                OVERVIEW
+            </li>
+          {% endif %}
+
+          {% if product.metafields.c_f.suites %}
+            <li class="tab suites">
+                SUITES
+            </li>
+          {% endif %}
+
+          {% if product.metafields.c_f.kitchen %}
+            <li class="tab kitchen">
+                KITCHEN
+            </li>
+          {% endif %}
+
+          {% if product.metafields.c_f.grounds %}
+            <li class="tab grounds">
+                GROUNDS
+            </li>
+          {% endif %}
+
+          {% if product.metafields.c_f.recreation %}
+            <li class="tab recreation">
+                RECREATION
+            </li>
+          {% endif %}
+
+        </ul>
+      </div>
+
+      <div id="tabContent">
+      </div>
+
+
+      <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+
+
+
 
         {% comment %}
-          ID addToCartForm is a selector for the ajax cart plugin
+
+        WE NEED TO REPLACE THE BELOW FORM WITH A CONTACT FORM
+
         {% endcomment %}
+        {% comment %}
+          ID addToCartForm is a selector for the ajax cart plugin
         <form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm" class="form-vertical">
 
           {% comment %}
@@ -107,11 +257,61 @@
             <span id="AddToCartText">{{ 'products.product.add_to_cart' | t }}</span>
           </button>
         </form>
+        {% endcomment %}
+        {% comment %}
+          END ADD TO CART FORM
+        {% endcomment %}
 
-      </div>
+        <div class="form-vertical text-center ten-twelfths">
+          {% form 'contact' %}
 
-      <div class="product-description rte" itemprop="description">
-        {{ product.description }}
+            {% comment %}
+              Successful message
+            {% endcomment %}
+            {% if form.posted_successfully? %}
+              <p class="note form-success">
+                {{ 'contact.form.post_success' | t }}
+              </p>
+            {% endif %}
+
+            {{ form.errors | default_errors }}
+
+            {% assign name_attr = 'contact.form.name' | t | handle %}
+            <div class="grid__item eight-twelfths text-center">
+              <figure><img src="https://placehold.it/50x50"></figure>
+              <hr class="grid__item four-twelfths" />
+              <h2 class="grid__item text-center four-twelfths">REQUEST A BOOKING</h2>
+              <hr class="grid__item four-twelfths" />
+            </div>
+
+            <div class="grid__item large--five-twelfths push--one-sixth">
+
+              <label for="ContactFormName" class="hidden-label">{{ 'contact.form.name' | t }}</label>
+              <input type="text" id="ContactFormName" class="input-full" name="contact[{{ name_attr }}]" placeholder="{{ 'contact.form.name' | t }}" autocapitalize="words" value="{% if form[name_attr] %}{{ form[name_attr] }}{% elsif customer %}{{ customer.name }}{% endif %}">
+
+              <label for="ContactFormCountry" class="hidden-label">Country</label>
+              <input type="text" id="ContactFormCountry" class="input-full" name="contact[country]" placeholder="Country" autocapitalize="words" value="{% if form.country %}{{ form.country }}{% elsif customer %}{{ customer.country }}{% endif %}">
+
+              <label for="ContactFormEmail" class="hidden-label">{{ 'contact.form.email' | t }}</label>
+              <input type="email" id="ContactFormEmail" class="input-full" name="contact[email]" placeholder="{{ 'contact.form.email' | t }}" autocorrect="off" autocapitalize="off" value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}">
+
+              {% assign name_attr = 'contact.form.phone' | t | handle %}
+              <label for="ContactFormPhone" class="hidden-label">{{ 'contact.form.phone' | t }}</label>
+              <input type="tel" id="ContactFormPhone" class="input-full" name="contact[{{ name_attr }}]" placeholder="{{ 'contact.form.phone' | t }}" pattern="[0-9\-]*" value="{% if form[name_attr] %}{{ form[name_attr] }}{% elsif customer %}{{ customer.phone }}{% endif %}">
+            </div>
+
+            <div class="grid__item large--five-twelfths push--one-sixth">
+              <label for="ContactFormMessage" class="hidden-label">{{ 'contact.form.message' | t }}</label>
+              <textarea rows="10" id="ContactFormMessage" class="input-full" name="contact[body]" placeholder="{{ 'contact.form.message' | t }}">{% if form.body %}{{ form.body }}{% endif %}</textarea>
+
+            </div>
+
+            <input type="submit" class="btn grid__item" value="{{ 'contact.form.send' | t }}">
+
+
+          {% endform %}
+        </div>
+
       </div>
 
       {% comment %}
