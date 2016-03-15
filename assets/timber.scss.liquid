@@ -1103,6 +1103,7 @@ a,
   color: $colorLink;
   text-decoration: none;
   background: transparent;
+
 }
 
 a:hover,
@@ -1138,6 +1139,7 @@ html input[disabled] {
   -moz-appearance: none;
   border-radius: $radius;
   letter-spacing: .17em;
+  font-style: normal;
 
   /*================ Set primary button colors - can override later ================*/
 
@@ -1151,6 +1153,7 @@ html input[disabled] {
   &:focus {
    background-color: $colorBtnPrimaryActive;
    color: $colorBtnPrimaryText;
+
   }
 
   &[disabled],
@@ -2289,11 +2292,12 @@ label.error {
     padding: 2em 10em;
     background-color: rgba(0,0,0,.5);
     color: white;
-  
+    letter-spacing: .21em;
+
 }
 .homeSplash figcaption a {
   display: block;
-  border: 1px solid $colorBtnPrimaryText;
+  border: 2px solid $colorBtnPrimaryText;
   color: $colorBtnPrimaryText;
   padding: 1em;
 }
@@ -2308,6 +2312,11 @@ label.error {
   .no-js & {
     display: block;
   }
+}
+
+#ProductThumbs li {
+    float: none;
+    display: inline-block;
 }
 
 .product-single__photos {
@@ -2614,6 +2623,8 @@ label.error {
 
 .cabin-title {
   font-family: 'Quattrocento';
-  font-size: 18px;
+  font-size: 35px;
+  font-style:normal;
+  color: $colorSecondary;
 
 }
