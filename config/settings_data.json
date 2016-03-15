@@ -4,7 +4,7 @@
     "Default": {
       "ajax_cart_method": "drawer",
       "cart_notes_enable": true,
-      "color_body_bg": "#fff",
+      "color_body_bg": "#fbfbf9",
       "color_body_text": "#333333",
       "color_borders": "#C39A1E",
       "color_footer_bg": " #666666",
