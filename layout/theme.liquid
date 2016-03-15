@@ -33,8 +33,10 @@
   <!-- Header hook for plugins ================================================== -->
   {{ content_for_header }}
   {% include 'oldIE-js' %}
+<!-- //ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js -->
+  {{ '//code.jquery.com/jquery-2.1.4.js' | script_tag }}
+  {{ '//code.jquery.com/ui/1.11.4/jquery-ui.js' | script_tag }}
 
-  {{ '//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js' | script_tag }}
   {{ 'modernizr.min.js' | asset_url | script_tag }}
 
   {% comment %}
@@ -149,7 +151,7 @@
   <div id="PageContainer" class="is-moved-by-drawer">
     <header class="site-header" role="banner">
       <div class="grid--full grid--table">
-        <div class="grid__item display-inline-block">
+        <div class="grid__item large--display-inline-block display-block">
           {% comment %}
             Use the uploaded logo from theme settings if enabled.
             Site name gets precedence with H1 tag on homepage, div on other pages.
@@ -224,6 +226,7 @@
                   </button>
                 </div>
               </div>
+              {% comment %}
               <div class="grid__item one-half text-right">
                 <div class="site-nav--mobile">
                   <a href="/cart" class="js-drawer-open-right site-nav__link" aria-controls="CartDrawer" aria-expanded="false">
@@ -234,6 +237,8 @@
                   </a>
                 </div>
               </div>
+              {% endcomment %}
+
             </div>
           </div>
         </nav>

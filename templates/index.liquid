@@ -17,7 +17,7 @@
 <div class="fullScreen homeSplash">
   <figure>
     <img src="{{ 'homeSplash.png' | asset_url }}">
-    <figcaption class="text-center large--one-fourth grid--full">
+    <figcaption class="text-center large--one-fourth grid--full medium-down--hide">
       <div class="three-fourths">
         <h1 class="text-right">{{ settings.splash_header }}</h1>
         <p class="text-right">{{ settings.splash_text }}</p>
@@ -82,7 +82,7 @@
       the grid_item_width variable.
 
       Example:
-        - {% assign grid_item_width = 'large--one-third medium--one-half' %}
+        - {% assign grid_item_width = 'large--one-third' %}
     {% endcomment %}
     {% assign grid_item_width = '' %}
     {% include 'product-grid-item' %}
@@ -116,7 +116,7 @@
 
 <div class="text-center wrapper">
   <hr class="one-sixth text-center">
-  <h3>{{ settings.second_text_subheader }}</h3>
+  <h3>{{ settings.second_text_header }}</h3>
   <p>{{ settings.second_text_text }}</p>
   <h4>{{ settings.second_phone_header }}</h4>
   <span class="grid__item  no-padding">{{ settings.second_phone_number }}</span>

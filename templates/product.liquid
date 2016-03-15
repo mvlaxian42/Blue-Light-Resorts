@@ -206,7 +206,7 @@ $(document).ready(function() {
         {% endcomment %}
         {% comment %}
           ID addToCartForm is a selector for the ajax cart plugin
-        <form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm" class="form-vertical">
+        <form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm" class="form-vertical overflow-hidden">
 
           {% comment %}
             Add product variants as a dropdown.
@@ -286,6 +286,8 @@ $(document).ready(function() {
 
             <div class="grid__item large--five-twelfths push--one-sixth">
 
+              <h3 class="grid__item text-center">CONTACT DETAILS</h3>
+
               <label for="ContactFormName" class="hidden-label">{{ 'contact.form.name' | t }}</label>
               <input type="text" id="ContactFormName" class="input-full" name="contact[{{ name_attr }}]" placeholder="{{ 'contact.form.name' | t }}" autocapitalize="words" value="{% if form[name_attr] %}{{ form[name_attr] }}{% elsif customer %}{{ customer.name }}{% endif %}">
 
@@ -301,12 +303,21 @@ $(document).ready(function() {
             </div>
 
             <div class="grid__item large--five-twelfths push--one-sixth">
+              <h3 class="grid__item text-center">CONTACT DETAILS</h3>
+
+              <input type="text" name="startDate" class="datepicker">
+              <input type="text" name="endDate" class="datepicker">
+
               <label for="ContactFormMessage" class="hidden-label">{{ 'contact.form.message' | t }}</label>
               <textarea rows="10" id="ContactFormMessage" class="input-full" name="contact[body]" placeholder="{{ 'contact.form.message' | t }}">{% if form.body %}{{ form.body }}{% endif %}</textarea>
 
             </div>
 
-            <input type="submit" class="btn grid__item" value="{{ 'contact.form.send' | t }}">
+            <p class="grid__item">This form is for booking requests only and does not confirm that a booking has been made</p>
+
+            <div class="grid__item text-center">
+              <input type="submit" class="btn grid__item no-float margin-center" value="{{ 'contact.form.send' | t }}">
+            </div>
 
 
           {% endform %}
@@ -381,5 +392,14 @@ $(document).ready(function() {
     {% if product.variants.size == 1 and product.variants.first.title contains 'Default' %}
       $('.selector-wrapper').hide();
     {% endif %}
+  });
+</script>
+
+<script>
+$(function() {
+  if (jQuery.ui) {
+    alert("Success!");
+  }
+    $( ".datepicker" ).datepicker();
   });
 </script>

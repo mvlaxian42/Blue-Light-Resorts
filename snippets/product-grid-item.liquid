@@ -58,29 +58,31 @@
   {% endcomment %}
   {% assign isEven = count | modulo:2 %}
   {% if isEven == 1 %}
-    <a href="{{ product.url | within: collection }}" class="grid__item seven-twelfths no-padding">
+    <a href="{{ product.url | within: collection }}" class="grid__item large--seven-twelfths no-padding even">
       <img src="{{ product.featured_image.src | img_url: 'master' }}" alt="{{ product.featured_image.alt | escape }}">
     </a>
-    <div class="grid__item five-twelfths no-padding text-center">
+    <div class="grid__item large--five-twelfths no-padding text-center">
       <p class="cabin-title">
         <a href="{{ product.url | within: collection }}">{{ product.title }}</a>
       </p>
+      <hr class="large--three-twelfths six-twelfths">
       <p>{{ product.description }}</p>
       <a href="{{ product.url | within: collection }}" class="btn">EXPLORE</a>
       <a href="{{ product.url | within: collection }}/#reservation" class="italic">CHECK AVAILABILITY</a>
     </div>
 
   {% else %}
-    <div class="grid__item five-twelfths no-padding text-center">
+    <div class="grid__item large--five-twelfths no-padding text-center odd">
       <p class="cabin-title">
         <a href="{{ product.url | within: collection }}">{{ product.title }}</a>
       </p>
+      <hr class="large--three-twelfths six-twelfths">
       <p>{{ product.description }}</p>
       <a href="{{ product.url | within: collection }}" class="btn">EXPLORE</a>
       <a href="{{ product.url | within: collection }}/#reservation" class="italic">CHECK AVAILABILITY</a>
     </div>
 
-    <a href="{{ product.url | within: collection }}" class="grid__item seven-twelfths no-padding">
+    <a href="{{ product.url | within: collection }}" class="grid__item large--seven-twelfths no-padding">
       <img src="{{ product.featured_image.src | img_url: 'master' }}" alt="{{ product.featured_image.alt | escape }}">
     </a>
 
