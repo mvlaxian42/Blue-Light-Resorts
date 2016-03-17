@@ -262,8 +262,8 @@ $socialIconFontStack: 'icons';
     - Based on http://blog.grayghostvisuals.com/sass/sass-media-query-mixin/
     - Usage docs: http://shopify.github.io/Timber/#sass-mixins
 ==============================================================================*/
-$min: min-width;
-$max: max-width;
+$min: 568px;
+$max: 1024px;
 @mixin at-query ($constraint_, $viewport1_, $viewport2_:null) {
  $constraint: $constraint_; $viewport1: $viewport1_; $viewport2: $viewport2_;
   @if type-of($constraint_) == number {
@@ -852,15 +852,20 @@ h1 {
 
 h2 {
   font-size: em(28px);
+  padding-top: 200px;
+  padding-bottom: 24px;
 }
 
 h3 {
   font-size: em(22px);
+  padding-top:24px;
+  padding-bottom:35px;
 }
 
 h4 {
   font-size: em(20px);
   color: #c39a1e;
+  padding-top: 97px;
 }
 
 h5 {
@@ -881,9 +886,9 @@ h6 {
 
 p {
   margin: 0 0 ($gutter / 2) 0;
-  font-size: 24px;
-  font-family:"Quattrocento", serif;
-  letter-spacing: .21em;
+  padding-top:10px;
+  padding-bottom:10px;
+
 
   img {
     margin: 0;
@@ -1143,6 +1148,7 @@ html input[disabled] {
   border-radius: $radius;
   letter-spacing: .17em;
   font-style: normal;
+
 
   /*================ Set primary button colors - can override later ================*/
 
@@ -1889,6 +1895,8 @@ label.error {
   font-size: em(16px);
   cursor: default;
   margin: 0 0 0 (-$gutter / 2);
+  font-family: "Quattrocento Sans", sans-serif;
+  text-transform: uppercase;
 
   li {
     margin: 0;
@@ -1934,10 +1942,12 @@ label.error {
 
   .site-nav--active > & {
     font-weight: bold;
+    color: $colorPrimary;
   }
 
   .site-nav--mobile & {
     display: inline-block;
+
   }
 }
 
@@ -2234,7 +2244,7 @@ label.error {
 ==============================================================================*/
 .site-footer {
   background-color: $colorFooterBg;
-  padding: $gutter 0;
+
   color: $colorFooterText;
 
   @include at-query ($min, $large) {
@@ -2302,9 +2312,12 @@ label.error {
   display: block;
   border: 2px solid $colorBtnPrimaryText;
   color: $colorBtnPrimaryText;
-  padding: 1em;
 }
-
+.homeSplash figcaption p{
+  font-size:20px;
+  padding: 0;
+  font-family:"Quattrocento", serif;
+}
 
 /*============================================================================
   #Product Page
@@ -2633,6 +2646,7 @@ label.error {
  .cabin-title a{
    font-size: 35px;
    color: #000;
+   padding-bottom:47px;
  }
  .text-center{ span{
    font-family:"Quattrocento", serif;
@@ -2640,6 +2654,8 @@ label.error {
    font-style: normal;
    letter-spacing: .21em;
    color: $colorBtnPrimary;
+   padding-bottom: 50px;
+
   }
 }
   .subText a{
@@ -2648,4 +2664,5 @@ label.error {
     font-style:italic;
     font-family: "Quattrocento Sans", sans-serif;
     letter-spacing: .17em;
+
   }
