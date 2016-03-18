@@ -835,7 +835,7 @@ h1, h2, h3, h4, h5, h6 {
   display: block;
   font-family: $headerFontStack;
   font-weight: $headerFontWeight;
-  margin: 0 0 0.5em;
+  margin: 0 0 0 0;
   line-height: 1.4;
   letter-spacing: .21em;
 
@@ -859,7 +859,7 @@ h2 {
 h3 {
   font-size: em(22px);
   padding-top:24px;
-  padding-bottom:35px;
+  padding-bottom:25px;
 }
 
 h4 {
@@ -966,7 +966,7 @@ pre {
 /*================ Horizontal Rules ================*/
 hr {
   clear: both;
-  border-top: solid #cc9900;
+  border-top: solid #C39A1E;
   border-width: 1px 0 0;
   // margin: $gutter 0;
   height: 0;
@@ -1133,7 +1133,7 @@ html input[disabled] {
   display: inline-block;
   padding: 8px 10px;
   width: auto;
-  margin: 0;
+  margin: 0 0 30px 0;
   line-height: 1.42;
   font-weight: bold;
   text-decoration: none;
@@ -1214,21 +1214,21 @@ html input[disabled] {
 }
 
 /*============================================================================
-  #Lists
-==============================================================================*/
+  #Lists==============================================================================*/
 ul, ol {
-  margin: 0 0 ($gutter / 2) 20px;
+  margin: 35px 0 ($gutter / 2) 20px;
   padding: 0;
+  font-family:"Quattrocento Sans", sans-serif;
+  text-transform: uppercase;
+  list-style-type: none;
 }
 
-ol { list-style: decimal; }
+ol { list-style-type: none; }
 ul ul, ul ol,
 ol ol, ol ul { margin: 4px 0 5px 20px; }
-li { margin-bottom: 0.25em; }
+li { margin-bottom: 25px;
+margin-top: 25px; }
 
-ul.square { list-style: square outside; }
-ul.disc { list-style: disc outside; }
-ol.alpha { list-style: lower-alpha outside; }
 
 .no-bullets {
   list-style: none outside;
@@ -2244,14 +2244,16 @@ label.error {
 ==============================================================================*/
 .site-footer {
   background-color: $colorFooterBg;
-
   color: $colorFooterText;
+
 
   @include at-query ($min, $large) {
     padding: ($gutter * 2) 0;
   }
 }
-
+.site-footer a{
+  color: #ffffff;
+}
 /*============================================================================
   #Product and Collection Grids
 ==============================================================================*/
