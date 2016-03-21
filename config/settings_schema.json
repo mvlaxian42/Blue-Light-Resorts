@@ -339,16 +339,5 @@
         ]
       }
     ]
-  },
-  {
-    "name": "Social media",
-    "settings": [
-      {
-        "type": "text",
-        "id": "twittercard_handle",
-        "label": "Twitter handle",
-        "info": "Example: @shopify"
-      }
-    ]
   }
 ]

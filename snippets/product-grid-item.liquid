@@ -68,7 +68,7 @@
       <hr class="large--three-twelfths six-twelfths">
       <p>{{ product.description }}</p>
       <a href="{{ product.url | within: collection }}" class="btn">EXPLORE</a>
-      <a href="{{ product.url | within: collection }}/#reservation" class="italic">CHECK AVAILABILITY</a>
+      {% comment %}<a href="{{ product.url | within: collection }}/#reservation" class="italic">CHECK AVAILABILITY</a>{% endcomment %}
     </div>
 
   {% else %}
@@ -79,7 +79,7 @@
       <hr class="large--three-twelfths six-twelfths">
       <p>{{ product.description }}</p>
       <a href="{{ product.url | within: collection }}" class="btn">EXPLORE</a>
-      <a href="{{ product.url | within: collection }}/#reservation" class="italic">CHECK AVAILABILITY</a>
+      {% comment %}<a href="{{ product.url | within: collection }}/#reservation" class="italic">CHECK AVAILABILITY</a>{% endcomment %}
     </div>
 
     <a href="{{ product.url | within: collection }}" class="grid__item large--seven-twelfths no-padding">
