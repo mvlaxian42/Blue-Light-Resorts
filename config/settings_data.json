@@ -4,11 +4,11 @@
     "Default": {
       "ajax_cart_method": "drawer",
       "cart_notes_enable": true,
-      "color_body_bg": "#fbfbf9",
+      "color_body_bg": "#FFFFFF",
       "color_body_text": "#333333",
       "color_borders": "#C39A1E",
       "color_footer_bg": "#35353D",
-      "color_footer_social_link": "#bbbbbb",
+      "color_footer_social_link": "#FFFFFF",
       "color_footer_text": "#FFFFFF",
       "color_primary": "#C39A1E",
       "color_secondary": "#bbb",

@@ -262,8 +262,8 @@ $socialIconFontStack: 'icons';
     - Based on http://blog.grayghostvisuals.com/sass/sass-media-query-mixin/
     - Usage docs: http://shopify.github.io/Timber/#sass-mixins
 ==============================================================================*/
-$min: 568px;
-$max: 1024px;
+$min: min-width;
+$max: max-width;
 @mixin at-query ($constraint_, $viewport1_, $viewport2_:null) {
  $constraint: $constraint_; $viewport1: $viewport1_; $viewport2: $viewport2_;
   @if type-of($constraint_) == number {
@@ -1816,9 +1816,16 @@ label.error {
 ==============================================================================*/
 .site-header {
   padding: ($gutter / 2) 0;
-  background-color: rgba(0,0,0,.5);
+  background-color: rgba(255,255,255,1);
   color: white;
-  position: absolute;
+  position: relative;
+
+  @include at-query ($min, $large){
+    padding: ($gutter / 2) 0;
+    background-color: rgba(0,0,0,.5);
+    color: white;
+    position: absolute;
+  }
 
   .grid--table {
     display: table;
@@ -1842,6 +1849,7 @@ label.error {
   @include at-query ($min, $large) {
     text-align: left;
     padding: 0 2em;
+
   }
 
   a,
@@ -2514,6 +2522,7 @@ label.error {
     margin-left: -$gutter / 2;
 
     > .grid__item {
+      padding-top: 65px;
       padding-left: $gutter / 2;
     }
   }
