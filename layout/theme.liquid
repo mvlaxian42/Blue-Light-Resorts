@@ -310,41 +310,41 @@
           <div class="grid__item large--one-third medium--one-half">
             <ul>
               {% for link in linklists.main-menu.links %}
-                    <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+                    <li class="grid__item one-half"><a href="{{ link.url }}">{{ link.title }}</a></li>
               {% endfor %}
             </ul>
           </div>
           {% if settings.footer_social_enable %}
             <div class="grid__item large--one-third medium--one-half">
-                <ul class="inline-list social-icons">
+                <ul class="inline-list social-icons text-center">
                 {% if settings.social_facebook_link != nil %}
-                  <li>
+                  <li class="one-half">
                     <a class="icon-fallback-text" href="{{ settings.social_facebook_link }}" title="{{ shop.name }} on Facebook">
-                      <figure aria-hidden="true">{{ 'Facebook_square' | image_url }}</figure>
+                      <figure aria-hidden="true"><img src="{{ 'square-facebook.svg' | asset_url }}"></figure>
                       <span class="fallback-text">Facebook</span>
                     </a>
                   </li>
                 {% endif %}
                 {% if settings.social_trip_advisor_link != nil %}
-                  <li>
+                  <li class="one-half">
                     <a class="icon-fallback-text" href="{{ settings.social_trip_advisor_link }}" title="{{ shop.name }} on Trip Advisor">
-                      <figure aria-hidden="true">{{ 'TripAdvisor_square' | image_url }}</figure>
+                      <figure aria-hidden="true"><img src="{{ 'square-tripadvisor.svg' | asset_url }}"></figure>
                       <span class="fallback-text">Trip Advisor</span>
                     </a>
                   </li>
                 {% endif %}
                 {% if settings.social_instagram_link != nil %}
-                  <li>
+                  <li class="one-half">
                     <a class="icon-fallback-text" href="{{ settings.social_instagram_link }}" title="{{ shop.name }} on Instagram">
-                      <figure aria-hidden="true">{{ 'Instagram_square' | image_url }}</figure>
+                      <figure aria-hidden="true"><img src="{{ 'square-instagram.svg' | asset_url }}"></figure>
                       <span class="fallback-text">Instagram</span>
                     </a>
                   </li>
                 {% endif %}
                 {% if settings.social_google_link != nil %}
-                  <li>
+                  <li class="one-half">
                     <a class="icon-fallback-text" href="{{ settings.social_google_link }}" title="{{ shop.name }} on Google +">
-                      <figure aria-hidden="true">{{ 'googlePlus_square' | image_url }}</figure>
+                      <figure aria-hidden="true"><img src="{{ 'square-googleplus.svg' | asset_url }}"></figure>
                       <span class="fallback-text">Google +</span>
                     </a>
                   </li>
