@@ -888,6 +888,8 @@ p {
   margin: 0 0 ($gutter / 2) 0;
   padding-top:10px;
   padding-bottom:10px;
+  letter-spacing: .17em;
+  font-weight: 700;
 
 
   img {
@@ -1768,8 +1770,9 @@ label.error {
 }
 
 .social-icons li {
-  margin: 0 ($gutter / 2) ($gutter / 2);
+  margin: 0;
   vertical-align: middle;
+
 
   @include at-query ($min, $postSmall) {
     margin-left: 0;
@@ -1786,6 +1789,10 @@ label.error {
     &:hover {
       color: darken({{ settings.color_footer_social_link }}, 10%);
     }
+  }
+  img{
+    width: 25%;
+    height: 25%;
   }
 }
 
@@ -2677,3 +2684,13 @@ label.error {
     letter-spacing: .17em;
 
   }
+  .grid__item {
+    img{
+    padding-top: 65px;
+    padding-bottom: 60px;
+    }
+    p{
+    padding-top:65px;
+
+    }
+}
