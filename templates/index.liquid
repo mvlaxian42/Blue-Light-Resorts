@@ -15,6 +15,72 @@
 {% endcomment %}
 
 <div class="fullScreen homeSplash">
+  <!-- Place somewhere in the <body> of your page -->
+  <div class="flexslider">
+    <ul class="slides">
+      {% if settings.slide_1_display %}
+      <li>
+      <figure>
+        <img src="{{ 'slider1.png' | asset_url }}" />
+        <figcaption class="text-center large--one-fourth grid--full medium-down--hide {{ settings.slide_1_text_position }}">
+          <div class="three-fourths">
+            <h1 class="text-right">{{ settings.splash_header }}</h1>
+            <p class="text-right">{{ settings.splash_text }}</p>
+            <a href="{{ settings.slide_1_button_link }}" class="text-center two-thirds right btn">{{ settings.splash_button_label }}</a>
+          </div>
+        </figcaption>
+      </figure>
+      </li>
+      {% endif %}
+
+      {% if settings.slide_2_display %}
+      <li>
+      <figure>
+        <img src="{{ 'slider2.png' | asset_url }}" />
+        <figcaption class="text-center large--one-fourth grid--full medium-down--hide {{ settings.slide_2_text_position }}">
+          <div class="three-fourths">
+            <h1 class="text-right">{{ settings.splash_header }}</h1>
+            <p class="text-right">{{ settings.splash_text }}</p>
+            <a href="{{ settings.slide_2_button_link }}" class="text-center two-thirds right btn">{{ settings.splash_button_label }}</a>
+          </div>
+        </figcaption>
+      </figure>
+      </li>
+      {% endif %}
+
+      {% if settings.slide_3_display %}
+      <li>
+      <figure>
+        <img src="{{ 'slider3.png' | asset_url }}" />
+        <figcaption class="text-center large--one-fourth grid--full medium-down--hide {{ settings.slide_3_text_position }}">
+          <div class="three-fourths">
+            <h1 class="text-right">{{ settings.splash_header }}</h1>
+            <p class="text-right">{{ settings.splash_text }}</p>
+            <a href="{{ settings.slide_3_button_link }}" class="text-center two-thirds right btn">{{ settings.splash_button_label }}</a>
+          </div>
+        </figcaption>
+      </figure>
+      </li>
+      {% endif %}
+
+      {% if settings.slide_4_display %}
+      <li>
+      <figure>
+        <img src="{{ 'slider4.png' | asset_url }}" />
+        <figcaption class="text-center large--one-fourth grid--full medium-down--hide {{ settings.slide_4_text_position }}">
+          <div class="three-fourths">
+            <h1 class="text-right">{{ settings.splash_header }}</h1>
+            <p class="text-right">{{ settings.splash_text }}</p>
+            <a href="{{ settings.slide_4_button_link }}" class="text-center two-thirds right btn">{{ settings.splash_button_label }}</a>
+          </div>
+        </figcaption>
+      </figure>
+      </li>
+      {% endif %}
+
+    </ul>
+  </div>
+  {% comment %}
   <figure>
     <img src="{{ 'homeSplash.png' | asset_url }}">
     <figcaption class="text-center large--one-fourth grid--full medium-down--hide">
@@ -25,6 +91,7 @@
       </div>
     </figcaption>
   </figure>
+  {% endcomment %}
 </div>
 
 {% comment %}
