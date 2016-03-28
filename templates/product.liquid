@@ -262,7 +262,7 @@ $(document).ready(function() {
           END ADD TO CART FORM
         {% endcomment %}
 
-        <div class="form-vertical text-center ten-twelfths">
+        <div class="form-vertical text-center ten-twelfths grid">
           {% form 'contact' %}
 
             {% comment %}
@@ -277,14 +277,16 @@ $(document).ready(function() {
             {{ form.errors | default_errors }}
 
             {% assign name_attr = 'contact.form.name' | t | handle %}
-            <div class="grid__item eight-twelfths text-center">
-              <figure><img src="{{ 'joe-new-blue-light-logo-07.svg' | asset_url }}"></figure>
-              <hr class="grid__item four-twelfths" />
-              <h2 class="grid__item text-center four-twelfths">REQUEST A BOOKING</h2>
-              <hr class="grid__item four-twelfths" />
+            <div class="grid__item ten-twelfths text-center noFloat">
+              <figure class="large--one-twelfth"><img src="{{ 'joe-new-blue-light-logo-07.svg' | asset_url }}"></figure>
+              <div class="display-flex">
+                <hr class="" />
+                <h2 class="text-center">REQUEST A BOOKING</h2>
+                <hr class="" />
+              </div>
             </div>
 
-            <div class="grid__item large--five-twelfths push--one-sixth">
+            <div class="grid__item large--four-twelfths noFloat display--inline-block">
 
               <h3 class="grid__item text-center">CONTACT DETAILS</h3>
 
@@ -302,7 +304,7 @@ $(document).ready(function() {
               <input type="tel" id="ContactFormPhone" class="input-full" name="contact[{{ name_attr }}]" placeholder="{{ 'contact.form.phone' | t }}" pattern="[0-9\-]*" value="{% if form[name_attr] %}{{ form[name_attr] }}{% elsif customer %}{{ customer.phone }}{% endif %}">
             </div>
 
-            <div class="grid__item large--five-twelfths push--one-sixth">
+            <div class="grid__item large--four-twelfths noFloat display--inline-block">
               <h3 class="grid__item text-center">CONTACT DETAILS</h3>
 
               <input type="text" name="contact[arrivalDate]" class="datepicker" placeholder="Arrival Date">
