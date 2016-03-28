@@ -2319,8 +2319,9 @@ label.error {
 ==============================================================================*/
 /* Position the figcaption on top of the figure */
 .homeSplash figure {
+  width: inherit;
   position: relative;
-  z-index: -1;
+  z-index: -4;
 }
 .homeSplash figcaption {
     position: absolute;
@@ -2336,11 +2337,13 @@ label.error {
   display: block;
   border: 2px solid $colorBtnPrimaryText;
   color: $colorBtnPrimaryText;
+  z-index: -2;
 }
 .homeSplash figcaption p{
   font-size:20px;
   padding: 0;
   font-family:"Quattrocento", serif;
+  z-index: -2;
 }
 
 /*============================================================================
