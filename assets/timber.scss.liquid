@@ -1791,8 +1791,9 @@ label.error {
     }
   }
   img{
-    width: 25%;
-    height: 25%;
+    width: 30%;
+    height: 30%;
+    padding: 0px;
   }
 }
 
@@ -2263,11 +2264,13 @@ label.error {
 
 
   @include at-query ($min, $large) {
-    padding: ($gutter * 2) 0;
+    padding: 0;
   }
 }
-.site-footer a{
+.site-footer { a{
   color: #ffffff;
+  padding-top: 5px;
+ }
 }
 /*============================================================================
   #Product and Collection Grids
@@ -2691,6 +2694,5 @@ label.error {
     }
     p{
     padding-top:65px;
-
     }
 }
