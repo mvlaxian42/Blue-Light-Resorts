@@ -142,38 +142,223 @@
     "settings": [
       {
         "type": "header",
-        "content": "Splash Image"
+        "content": "Slider"
       },
       {
         "type": "image",
-        "id": "homeSplash.png",
-        "label": "Home Splash Image",
+        "id": "slider1.png",
+        "label": "Slide 1",
         "max-width": 1920,
         "info": "Maximum width is 1920px. The uploaded file will be resized to fit within those constraints."
       },
       {
+        "type": "checkbox",
+        "id": "slide_1_display",
+        "default": false,
+        "label": "Display"
+      },
+      {
         "type": "text",
-        "id": "splash_header",
-        "label": "Splash Image Header Text",
+        "id": "slide_1_header",
+        "label": "Slide 1 Header Text",
         "default": "One Mountain"
       },
       {
         "type": "text",
-        "id": "splash_text",
-        "label": "Splash Image Text",
+        "id": "slide_1_text",
+        "label": "Slide 1 Text",
         "default": "ENDLESS POSSIBILITIES"
       },
       {
         "type": "text",
-        "id": "splash_button_label",
-        "label": "Splash Image Button Label",
+        "id": "slide_1_button_label",
+        "label": "Slide 1 Button Label",
         "default": "EXPLORE OUR CABINS"
       },
       {
         "type": "text",
-        "id": "splash_button_link",
-        "label": "Splash Image Button Link",
+        "id": "slide_1_button_link",
+        "label": "Slide 1 Button Link",
         "default": "/#cabins"
+      },
+      {
+        "type": "select",
+        "id": "slide_1_text_position",
+        "label": "Slide 1 Position",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "right",
+            "label": "Right"
+          }
+        ],
+        "default": "right",
+        "info": "Which side the text and buttons will appear on the slide"
+      },
+      {
+        "type": "image",
+        "id": "slider2.png",
+        "label": "Slide 2",
+        "max-width": 1920,
+        "info": "Maximum width is 1920px. The uploaded file will be resized to fit within those constraints."
+      },
+      {
+        "type": "checkbox",
+        "id": "slide_2_display",
+        "default": false,
+        "label": "Display"
+      },
+      {
+        "type": "text",
+        "id": "slide_2_header",
+        "label": "Slide 2 Header Text",
+        "default": "One Mountain"
+      },
+      {
+        "type": "text",
+        "id": "slide_2_text",
+        "label": "Slide 2 Text",
+        "default": "ENDLESS POSSIBILITIES"
+      },
+      {
+        "type": "text",
+        "id": "slide_2_button_label",
+        "label": "Slide 2 Button Label",
+        "default": "EXPLORE OUR CABINS"
+      },
+      {
+        "type": "text",
+        "id": "slide_2_button_link",
+        "label": "Slide 2 Button Link",
+        "default": "/#cabins"
+      },
+      {
+        "type": "select",
+        "id": "slide_2_text_position",
+        "label": "Slide 2 Position",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "right",
+            "label": "Right"
+          }
+        ],
+        "default": "right",
+        "info": "Which side the text and buttons will appear on the slide"
+      },
+      {
+        "type": "image",
+        "id": "slider3.png",
+        "label": "Slide 3",
+        "max-width": 1920,
+        "info": "Maximum width is 1920px. The uploaded file will be resized to fit within those constraints."
+      },
+      {
+        "type": "checkbox",
+        "id": "slide_3_display",
+        "default": false,
+        "label": "Display"
+      },
+      {
+        "type": "text",
+        "id": "slide_3_header",
+        "label": "Slide 3 Header Text",
+        "default": "One Mountain"
+      },
+      {
+        "type": "text",
+        "id": "slide_3_text",
+        "label": "Slide 3 Text",
+        "default": "ENDLESS POSSIBILITIES"
+      },
+      {
+        "type": "text",
+        "id": "slide_3_button_label",
+        "label": "Slide 3 Button Label",
+        "default": "EXPLORE OUR CABINS"
+      },
+      {
+        "type": "text",
+        "id": "slide_3_button_link",
+        "label": "Slide 3 Button Link",
+        "default": "/#cabins"
+      },
+      {
+        "type": "select",
+        "id": "slide_3_text_position",
+        "label": "Slide 3 Position",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "right",
+            "label": "Right"
+          }
+        ],
+        "default": "right",
+        "info": "Which side the text and buttons will appear on the slide"
+      },
+      {
+        "type": "image",
+        "id": "slider4.png",
+        "label": "Slide 4",
+        "max-width": 1920,
+        "info": "Maximum width is 1920px. The uploaded file will be resized to fit within those constraints."
+      },
+      {
+        "type": "checkbox",
+        "id": "slide_4_display",
+        "default": false,
+        "label": "Display"
+      },
+      {
+        "type": "text",
+        "id": "slide_4_header",
+        "label": "Slide 4 Header Text",
+        "default": "One Mountain"
+      },
+      {
+        "type": "text",
+        "id": "slide_4_text",
+        "label": "Slide 4 Text",
+        "default": "ENDLESS POSSIBILITIES"
+      },
+      {
+        "type": "text",
+        "id": "slide_4_button_label",
+        "label": "Slide 4 Button Label",
+        "default": "EXPLORE OUR CABINS"
+      },
+      {
+        "type": "text",
+        "id": "slide_4_button_link",
+        "label": "Slide 4 Button Link",
+        "default": "/#cabins"
+      },
+      {
+        "type": "select",
+        "id": "slide_4_text_position",
+        "label": "Slide 4 Position",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "right",
+            "label": "Right"
+          }
+        ],
+        "default": "right",
+        "info": "Which side the text and buttons will appear on the slide"
       },
       {
         "type": "header",
