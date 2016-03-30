@@ -1791,9 +1791,12 @@ label.error {
     }
   }
   img{
-    width: 30%;
-    height: 30%;
-    padding: 0px;
+    padding-top: 10px;
+    padding-left: 12px;
+    padding-bottom: 12px;
+    padding-right: 12px;
+    max-width: 72%;
+
   }
 }
 
@@ -2271,6 +2274,7 @@ label.error {
   color: #ffffff;
   padding-top: 5px;
  }
+
 }
 /*============================================================================
   #Product and Collection Grids
@@ -2315,8 +2319,9 @@ label.error {
 ==============================================================================*/
 /* Position the figcaption on top of the figure */
 .homeSplash figure {
+  width: inherit;
   position: relative;
-  z-index: -1;
+  z-index: -4;
 }
 .homeSplash figcaption {
     position: absolute;
@@ -2332,11 +2337,13 @@ label.error {
   display: block;
   border: 2px solid $colorBtnPrimaryText;
   color: $colorBtnPrimaryText;
+  z-index: -2;
 }
 .homeSplash figcaption p{
   font-size:20px;
   padding: 0;
   font-family:"Quattrocento", serif;
+  z-index: -2;
 }
 
 /*============================================================================
@@ -2369,6 +2376,10 @@ label.error {
   li {
     margin-bottom: $gutter;
   }
+}
+
+.product-description {
+  text-align: center;
 }
 
 
