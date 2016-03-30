@@ -330,10 +330,10 @@
             </ul>
           </div>
           {% if settings.footer_social_enable %}
-            <div class="grid__item large--one-third medium--one-half">
+            <div class="grid__item large--one-third medium--one-third">
                 <ul class="inline-list social-icons text-center">
                 {% if settings.social_facebook_link != nil %}
-                  <li class="one-half">
+                  <li class="one-third">
                     <a class="icon-fallback-text" href="{{ settings.social_facebook_link }}" title="{{ shop.name }} on Facebook">
                       <figure aria-hidden="true"><img src="{{ 'square-facebook.svg' | asset_url }}"></figure>
                       <span class="fallback-text">Facebook</span>
@@ -341,7 +341,7 @@
                   </li>
                 {% endif %}
                 {% if settings.social_trip_advisor_link != nil %}
-                  <li class="one-half">
+                  <li class="one-third">
                     <a class="icon-fallback-text" href="{{ settings.social_trip_advisor_link }}" title="{{ shop.name }} on Trip Advisor">
                       <figure aria-hidden="true"><img src="{{ 'square-tripadvisor.svg' | asset_url }}"></figure>
                       <span class="fallback-text">Trip Advisor</span>
@@ -349,7 +349,7 @@
                   </li>
                 {% endif %}
                 {% if settings.social_instagram_link != nil %}
-                  <li class="one-half">
+                  <li class="one-third">
                     <a class="icon-fallback-text" href="{{ settings.social_instagram_link }}" title="{{ shop.name }} on Instagram">
                       <figure aria-hidden="true"><img src="{{ 'square-instagram.svg' | asset_url }}"></figure>
                       <span class="fallback-text">Instagram</span>
@@ -357,7 +357,7 @@
                   </li>
                 {% endif %}
                 {% if settings.social_google_link != nil %}
-                  <li class="one-half">
+                  <li class="one-third">
                     <a class="icon-fallback-text" href="{{ settings.social_google_link }}" title="{{ shop.name }} on Google +">
                       <figure aria-hidden="true"><img src="{{ 'square-googleplus.svg' | asset_url }}"></figure>
                       <span class="fallback-text">Google +</span>
