@@ -1243,7 +1243,8 @@ ol { list-style-type: none; }
 ul ul, ul ol,
 ol ol, ol ul { margin: 4px 0 5px 20px; }
 li { margin-bottom: 25px;
-margin-top: 25px; }
+margin-top: 25px;
+display:inline-block; }
 
 
 .no-bullets {
@@ -2393,6 +2394,13 @@ label.error {
   }
 }
 
+
+.product-description {
+  text-align: center;
+  margin:0 auto;
+}
+
+
 .form-vertical .display-flex {
   align-items: center;
 }
@@ -2423,11 +2431,16 @@ label.error {
     float: none;
     overflow: auto;
 }
-.product-description {
-  text-align: center;
-  margin: 0 auto;
-}
+.tab {
+  display: inline-block;
+  letter-spacing: 7px;
+  border-bottom-style: solid;
+  border-bottom-width: thin;
+  padding: 14px;
+  font-family: "Quattrocentro", serif;
+  cursor: pointer;
 
+}
 
 /*============================================================================
   #Notes and Form Feedback
