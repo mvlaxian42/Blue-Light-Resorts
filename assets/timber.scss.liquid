@@ -1494,8 +1494,11 @@ input[type="submit"] {
 input,
 textarea,
 select {
-  border: 1px solid $colorBorder;
+  border: 0;
+  width: 100%;
   max-width: 100%;
+  background-color: #E8E8E8;
+  text-transform: uppercase;
   padding: 8px 10px;
   border-radius: $radius;
 
@@ -1844,6 +1847,7 @@ label.error {
   background-color: rgba(255,255,255,1);
   color: white;
   position: relative;
+  z-index: 3;
 
   @include at-query ($min, $large){
     padding: ($gutter / 2) 0;
@@ -2335,7 +2339,6 @@ label.error {
 .homeSplash figure {
   width: inherit;
   position: relative;
-  z-index: -4;
 }
 .homeSplash figcaption {
     position: absolute;
@@ -2351,13 +2354,11 @@ label.error {
   display: block;
   border: 2px solid $colorBtnPrimaryText;
   color: $colorBtnPrimaryText;
-  z-index: -2;
 }
 .homeSplash figcaption p{
   font-size:20px;
   padding: 0;
   font-family:"Quattrocento", serif;
-  z-index: -2;
 }
 
 /*============================================================================

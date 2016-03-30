@@ -77,7 +77,6 @@ html[xmlns] .flexslider .slides {
   background: #ffffff;
   border: none;
   position: relative;
-  z-index: -1;
   zoom: 1;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
@@ -108,6 +107,8 @@ html[xmlns] .flexslider .slides {
 .carousel li {
   margin-right: 5px;
 }
+/* HACK TO GET THE FIRST IMAGE DISPLAYING QUICKER */
+.flexslider .slides > li:first-child {float: left; display: block;}
 .flex-direction-nav {
   *height: 0;
 }
@@ -167,7 +168,6 @@ html[xmlns] .flexslider .slides {
   opacity: 0!important;
   filter: alpha(opacity=0);
   cursor: default;
-  z-index: -1;
 }
 .flex-pauseplay a {
   display: block;
