@@ -1499,6 +1499,8 @@ legend {
 button,
 input[type="submit"] {
   cursor: pointer;
+  margin: 0 auto 4em !important;
+  background-color: $colorBtnSecondaryText
 }
 
 input,
@@ -1880,6 +1882,20 @@ label.error {
   }
 }
 
+.site-header nav.nav-bar {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.grid__item.large--display-inline-block.display-block {
+    display: block;
+}
+
+header div.grid__item h1 a img {
+    padding: 0;
+}
+
 .site-header__logo {
   text-align: center;
   margin: 0 auto;
@@ -1971,6 +1987,9 @@ label.error {
   padding: $gutter;
   white-space: nowrap;
   color: $colorNavText;
+
+  color: #006c95;
+  font-size: 2em;
 
   &:hover,
   &:active {
