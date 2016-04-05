@@ -64,6 +64,12 @@
       },
       {
         "type": "color",
+        "id": "color_highlight_bg",
+        "label": "Product Highlight Section Background",
+        "default": "#fbfbf9"
+      },
+      {
+        "type": "color",
         "id": "color_body_text",
         "label": "Text",
         "default": "#333333"

@@ -102,6 +102,7 @@ $colorTextBody: {{ settings.color_body_text }};
 
 // Backgrounds
 $colorBody: {{ settings.color_body_bg }};
+$highlightBackgroundColor: {{ settings.color_highlight_bg }};
 
 // Border colors
 $colorBorder: {{ settings.color_borders }};
@@ -716,6 +717,13 @@ body {
   background-color: $colorBody;
 }
 
+.template-index .grid-uniform {
+  background-color: $highlightBackgroundColor;
+  margin-top: 6em;
+  padding-bottom: 2em;
+  margin-bottom: 10em;
+}
+
 figure {
   margin: 0;
 }
@@ -1171,13 +1179,14 @@ html input[disabled] {
   color: $colorBtnPrimaryText;
 
   &:hover {
-    color: $colorBtnPrimaryText;
+    color: $colorBtnSecondaryText;
+    background-color: $colorBtnPrimaryText;
   }
 
   &:active,
   &:focus {
-   background-color: $colorBtnPrimaryActive;
-   color: $colorBtnPrimaryText;
+    color: $colorBtnSecondaryText;
+    background-color: $colorBtnPrimaryText;
 
   }
 
@@ -1488,13 +1497,18 @@ legend {
 button,
 input[type="submit"] {
   cursor: pointer;
+  margin: 0 auto 4em !important;
+  background-color: $colorBtnSecondaryText
 }
 
 input,
 textarea,
 select {
-  border: 1px solid $colorBorder;
+  border: 0;
+  width: 100%;
   max-width: 100%;
+  background-color: #E8E8E8;
+  text-transform: uppercase;
   padding: 8px 10px;
   border-radius: $radius;
 
@@ -1515,7 +1529,7 @@ select {
 }
 
 textarea {
-  min-height: 100px;
+  min-height: 87px;
 }
 
 /*================ Input element overrides ================*/
@@ -1843,6 +1857,7 @@ label.error {
   background-color: rgba(255,255,255,1);
   color: white;
   position: relative;
+  z-index: 3;
 
   @include at-query ($min, $large){
     padding: ($gutter / 2) 0;
@@ -1863,6 +1878,20 @@ label.error {
       vertical-align: middle;
     }
   }
+}
+
+.site-header nav.nav-bar {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.grid__item.large--display-inline-block.display-block {
+    display: block;
+}
+
+header div.grid__item h1 a img {
+    padding: 0;
 }
 
 .site-header__logo {
@@ -1956,6 +1985,9 @@ label.error {
   padding: $gutter;
   white-space: nowrap;
   color: $colorNavText;
+
+  color: #006c95;
+  font-size: 2em;
 
   &:hover,
   &:active {
@@ -2334,7 +2366,6 @@ label.error {
 .homeSplash figure {
   width: inherit;
   position: relative;
-  z-index: -4;
 }
 .homeSplash figcaption {
     position: absolute;
@@ -2350,13 +2381,16 @@ label.error {
   display: block;
   border: 2px solid $colorBtnPrimaryText;
   color: $colorBtnPrimaryText;
-  z-index: -2;
 }
 .homeSplash figcaption p{
   font-size:20px;
   padding: 0;
   font-family:"Quattrocento", serif;
-  z-index: -2;
+}
+
+/* Cabin tiles */
+.template-index .grid__item.large--five-twelfths.no-padding.text-center p {
+    padding: 65px 20% 10px;
 }
 
 /*============================================================================
