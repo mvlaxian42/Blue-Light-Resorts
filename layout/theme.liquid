@@ -322,7 +322,7 @@
     <footer class="site-footer small--text-center" role="contentinfo">
       <div class="wrapper">
         <div class="grid">
-          <div class="grid__item large--one-third medium--one-half">
+          <div class="grid__item large--one-third medium--one-half grid">
             <ul>
               {% for link in linklists.main-menu.links %}
                     <li class="grid__item one-half"><a href="{{ link.url }}">{{ link.title }}</a></li>
@@ -372,7 +372,7 @@
           {% endcomment %}
           <div class="grid__item large--one-third medium--one-half">
 
-            <ul>
+            <ul class="contactInfo">
               <li>CONTACT:</li>
               <li>{{ settings.contact_name }}</li>
               <li>{{ settings.contact_number }}</li>
