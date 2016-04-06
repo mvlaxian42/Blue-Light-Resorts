@@ -1450,6 +1450,12 @@ form {
   }
 }
 
+form h3 {
+  color: $colorBtnPrimaryText;
+  font-size: 1em;
+  font-family: $bodyFontStack;
+}
+
 input,
 textarea,
 button,
@@ -2474,7 +2480,10 @@ margin-bottom: .5em;
   padding: 14px;
   font-family: "Quattrocentro", serif;
   cursor: pointer;
-  height: 4em;
+  height: 3em;
+  font-size: 1.5em;
+  font-weight: 100;
+  padding: 0 1em;
 
 @include at-query ($max, $large){
  display: block;
@@ -2500,10 +2509,16 @@ margin-bottom: .5em;
 }
 
 }
-#tabContent  li{
-  width: 25%;
-  max-width: 130px;
 
+#tabContent {
+  margin: 0 auto;
+  text-align: left;
+}
+#tabContent  li{
+  width: 50%;
+  text-align: left;
+  vertical-align: top;
+  margin: 1em 0;
 }
 
 /*============================================================================
