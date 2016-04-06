@@ -719,21 +719,9 @@ body {
 
 .template-index .grid-uniform {
   background-color: $highlightBackgroundColor;
-  margin-top: 2em;
-  padding-top: .5em;
-  margin-bottom: 4em;
-  @include at-query ($min, $large) {
-    margin-top: 6em;
-    padding-bottom: 2em;
-    margin-bottom: 10em;
-  }
-
-  @include at-query ($max, $large) {
-    .grid__item {
-      display: flex;
-      flex-direction: column;
-    }
-  }
+  margin-top: 6em;
+  padding-bottom: 2em;
+  margin-bottom: 10em;
 }
 
 figure {
@@ -886,30 +874,20 @@ h1 {
 
 h2 {
   font-size: em(28px);
+  padding-top: 200px;
   padding-bottom: 24px;
-  @include at-query ($min, $large) {
-    padding-top: 200px;
-  }
 }
 
 h3 {
   font-size: em(22px);
   padding-top:24px;
-  padding-bottom: 10px;
-  @include at-query ($min, $large) {
-    padding-bottom:25px;
-  }
+  padding-bottom:25px;
 }
 
 h4 {
-
-  font-size: 1em;
+  font-size: em(20px);
   color: #c39a1e;
-  padding-top: 25px;
-  @include at-query ($min, $large) {
-    padding-top: 97px;
-    font-size: em(20px);
-  }
+  padding-top: 97px;
 }
 
 h5 {
@@ -1180,10 +1158,12 @@ html input[disabled] {
   padding: 8px 10px;
   width: auto;
   margin: 0 0 30px 0;
+  line-height: 1.42;
   font-weight: bold;
   text-decoration: none;
   text-align: center;
   vertical-align: middle;
+  white-space: nowrap;
   cursor: pointer;
   border: 2px solid #C39A1E;
   @include user-select(none);
@@ -1192,9 +1172,6 @@ html input[disabled] {
   border-radius: $radius;
   letter-spacing: .17em;
   font-style: normal;
-  margin: 2em 20%;
-  font-size: 1.5em;
-  font-weight: 100;
 
 
   /*================ Set primary button colors - can override later ================*/
@@ -1894,7 +1871,7 @@ label.error {
     table-layout: fixed;
     width: 100%;
 
-    > .grid__item {
+     .grid__item {
       float: none;
       display: inline-block;
       width: auto;
@@ -2009,11 +1986,9 @@ header div.grid__item h1 a img {
   white-space: nowrap;
   color: $colorNavText;
 
-@include at-query ($max, $large)
- {
-   color: #006c95;
-    font-size: 2em;
-  }
+  color: #006c95;
+  font-size: 2em;
+
   &:hover,
   &:active {
     color: #C39A1E;
@@ -2340,70 +2315,11 @@ header div.grid__item h1 a img {
     padding: 0;
   }
 }
-
-footer hr {
-  border-color: white;
-}
-
 .site-footer { a{
   color: #ffffff;
   padding-top: 5px;
  }
 
-}
-
-/* Rearrange the footer for mobiles and adjust spacing */
-@include at-query ($max, $large) {
-  footer .wrapper > .grid {
-    display: flex;
-    flex-direction: column;
-  }
-
-  footer .grid__item p {
-    padding: 0;
-  }
-
-  footer .contactInfo {
-    margin: 0;
-    text-transform: none;
-    letter-spacing: .05em;
-  }
-
-  footer .contactInfo li {
-    margin: .5em;
-  }
-
-  footer ul {
-    margin-left: 0;
-  }
-
-  footer hr {
-    width: 20%;
-  }
-
-  footer li {
-      display: block;
-  }
-
-  .grid__item.text-footer center {
-      order: 1;
-  }
-
-  footer .grid__item.large--one-third.medium--one-half {
-      order: 3;
-  }
-
-  footer .grid__item.text-center {
-      order: 2;
-  }
-
-  footer .grid__item.large--one-third.medium--one-half.grid {
-      order: 1;
-  }
-
-  footer .grid__item.large--one-third.medium--one-third {
-      order: 2;
-  }
 }
 /*============================================================================
   #Product and Collection Grids
@@ -2446,13 +2362,6 @@ footer hr {
 /*============================================================================
   #Home Page
 ==============================================================================*/
-/* Hide the slider nav on mobile */
-.flexslider .flex-control-nav, .flex-direction-nav {
-  @include at-query ($max, $large) {
-    display: none;
-  }
-}
-
 /* Position the figcaption on top of the figure */
 .homeSplash figure {
   width: inherit;
@@ -2481,29 +2390,7 @@ footer hr {
 
 /* Cabin tiles */
 .template-index .grid__item.large--five-twelfths.no-padding.text-center p {
-    padding: 0 15%;
-    margin-bottom: 0;
-    @include at-query ($min, $small) {
-      padding: 65px 20% 10px;
-    }
-}
-@include at-query ($max, $large) {
-  .odd + a img {
-      order: 1;
-  }
-
-  .odd {
-      order: 2;
-  }
-
-  .grid-uniform:nth-child(2) {
-      display: flex;
-  }
-
-  .grid-uniform .grid__item {
-      display: flex;
-      flex-direction: column;
-  }
+    padding: 65px 20% 10px;
 }
 
 /*============================================================================
@@ -2576,7 +2463,7 @@ footer hr {
     overflow: auto;
 }
 .tab {
-  display: inline-block;
+  display: inline;
   letter-spacing: 7px;
   border-bottom-style: solid;
   border-bottom-width: 2px;
@@ -2584,17 +2471,35 @@ footer hr {
   padding: 14px;
   font-family: "Quattrocentro", serif;
   cursor: pointer;
+
+@include at-query ($max, $large){
+ display: block;
+ letter-spacing: 7px;
+ border-style:solid;
+ border-width:2px;
+ border-color:#ccccb3;
+ padding:14px;
+ font-family: "Quattrocentro", serif;
+ color:#ccccb3;
+ }
 }
 
 .tab.active{
   color:#C39A1E;
   border-color: #C39A1E;
+
+
+ @include at-query ($min, $large){
+  color:#C39A1E;
+  border-color: #C39A1E;
   border-bottom-width:10px;
+}
 
 }
-#tabContent li{
-  width: 50%;
+#tabContent  li{
+  width: 25%;
   max-width: 130px;
+
 }
 
 /*============================================================================
@@ -2890,24 +2795,19 @@ footer hr {
 
 }
  .cabin-title a{
-   font-size: 1.5rem;
+   font-size: 35px;
    color: #000;
    padding-bottom:47px;
-   @include at-query ($min, $small) {
-     font-size: 35px;
-   }
  }
  .text-center{ span{
-   font-size: 2em;
    font-family:"Quattrocento", serif;
+   font-size: 35px;
    font-style: normal;
    letter-spacing: .21em;
    color: $colorBtnPrimary;
-   @include at-query ($min, $large) {
-     font-size: 35px;
-     padding-bottom: 50px;
-   }
- }
+   padding-bottom: 50px;
+
+  }
 }
   .subText a{
     font-size: 18px;
@@ -2919,11 +2819,8 @@ footer hr {
   }
   .grid__item {
     img{
-      padding: 1em 10px;
-      @include at-query ($min, $large) {
-        padding-top: 85px;
-        padding-bottom: 60px;
-      }
+    padding-top: 85px;
+    padding-bottom: 60px;
     }
     p{
     padding-top:65px;
