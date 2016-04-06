@@ -12,10 +12,12 @@
 <script>
 //Initialize the tab content with overview metadata
 $(document).ready(function() {
-  var overviewContent = $("#overviewContent").html().split("\n");
+  var overviewContent = $("#overviewContent").html().trim().split("\n");
   var overviewContentHTML = [];
   for (var i = 0; i < overviewContent.length; i++) {
-    overviewContentHTML[i] = "<li>" + overviewContent[i] + "</li>";
+    if (overviewContent[i] !== '' || overviewContent[i] !== '  ' ) {
+      overviewContentHTML[i] = "<li>" + overviewContent[i] + "</li>";
+    }
   }
 
   return $("#tabContent").html(overviewContentHTML);
@@ -29,16 +31,18 @@ $(document).ready(function() {
     $(this).addClass("active");
     //Get which key of the metadata we are using and assign the hidden content to be the content in the tabContent div
     if ($(this).hasClass("overview")) {
-      var overviewContent = $("#overviewContent").html().split("\n");
+      var overviewContent = $("#overviewContent").html().trim().split("\n");
       var overviewContentHTML = [];
       for (var i = 0; i < overviewContent.length; i++) {
-        overviewContentHTML[i] = "<li>" + overviewContent[i] + "</li>";
+        if (overviewContent[i] !== '') {
+          overviewContentHTML[i] = "<li>" + overviewContent[i].trim() + "</li>";
+        }
       }
 
       return $("#tabContent").html(overviewContentHTML);
     }
     else if ($(this).hasClass("suites")) {
-      var suitesContent = $("#suitesContent").html().split("\n");
+      var suitesContent = $("#suitesContent").html().trim().split("\n");
       var suitesContentHTML = [];
       for (var i = 0; i < suitesContent.length; i++) {
         suitesContentHTML[i] = "<li>" + suitesContent[i] + "</li>";
@@ -47,7 +51,7 @@ $(document).ready(function() {
       return $("#tabContent").html(suitesContentHTML);
     }
     else if ($(this).hasClass("kitchen")) {
-      var kitchenContent = $("#kitchenContent").html().split("\n");
+      var kitchenContent = $("#kitchenContent").html().trim().split("\n");
       var kitchenContentHTML = [];
       for (var i = 0; i < kitchenContent.length; i++) {
         kitchenContentHTML[i] = "<li>" + kitchenContent[i] + "</li>";
@@ -56,7 +60,7 @@ $(document).ready(function() {
       return $("#tabContent").html(kitchenContentHTML);
     }
     else if ($(this).hasClass("grounds")) {
-      var groundsContent = $("#groundsContent").html().split("\n");
+      var groundsContent = $("#groundsContent").html().trim().split("\n");
       var groundsContentHTML = [];
       for (var i = 0; i < groundsContent.length; i++) {
         groundsContentHTML[i] = "<li>" + groundsContent[i] + "</li>";
@@ -65,7 +69,7 @@ $(document).ready(function() {
       return $("#tabContent").html(groundsContentHTML);
     }
     else if ($(this).hasClass("recreation")) {
-      var recreationContent = $("#recreationContent").html().split("\n");
+      var recreationContent = $("#recreationContent").html().trim().split("\n");
       var recreationContentHTML = [];
       for (var i = 0; i < recreationContent.length; i++) {
         recreationContentHTML[i] = "<li>" + recreationContent[i] + "</li>";
@@ -160,29 +164,29 @@ $(document).ready(function() {
           {% if product.metafields.c_f.overview %}
             <li class="tab overview active">
                 OVERVIEW
-            </li>
+            </li
           {% endif %}
 
           {% if product.metafields.c_f.suites %}
-            <li class="tab suites">
+            ><li class="tab suites">
                 SUITES
-            </li>
+            </li
           {% endif %}
 
           {% if product.metafields.c_f.kitchen %}
-            <li class="tab kitchen">
+            ><li class="tab kitchen">
                 KITCHEN
-            </li>
+            </li
           {% endif %}
 
           {% if product.metafields.c_f.grounds %}
-            <li class="tab grounds">
+            ><li class="tab grounds">
                 GROUNDS
-            </li>
+            </li
           {% endif %}
 
           {% if product.metafields.c_f.recreation %}
-            <li class="tab recreation">
+            ><li class="tab recreation">
                 RECREATION
             </li>
           {% endif %}
