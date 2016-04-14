@@ -312,8 +312,8 @@ $(document).ready(function() {
             <div class="grid__item large--four-twelfths noFloat display--inline-block">
               <h3 class="grid__item text-center">CONTACT DETAILS</h3>
 
-              <input type="text" name="contact[arrivalDate]" class="datepicker" placeholder="Arrival Date">
-              <input type="text" name="contact[departureDate]" class="datepicker" placeholder="Departure Date">
+              <input type="select" name="contact[arrivalDate]" class="datepicker" placeholder="Arrival Date">
+              <input type="select" name="contact[departureDate]" class="datepicker" placeholder="Departure Date">
 
               <label for="ContactFormMessage" class="hidden-label">{{ 'contact.form.message' | t }}</label>
               <textarea rows="2" id="ContactFormMessage" class="input-full" name="contact[body]" placeholder="{{ 'contact.form.message' | t }}">{% if form.body %}{{ form.body }}{% endif %}</textarea>
@@ -377,7 +377,7 @@ $(document).ready(function() {
 <script>
 
   jQuery(function($) {
-    $( ".datepicker" ).datepicker();
+    $(".datepicker").datepicker({ minDate: 0 });
   });
 
   var selectCallback = function(variant, selector) {
